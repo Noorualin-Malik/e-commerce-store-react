@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Factorial Calculator</h2>
+    <input type="number" id="numberInput" placeholder="Enter your number"/>
+    <button onclick="calculateFactorial()">Calculate</button>
+    <p id="result"></p>
+
+
+    <script>
+        function calculateFactorial(){
+            const num= (document.getElementById('numberInput').value);
+            let result=1;
+
+            if(isNaN(num) || num<0){
+                document.getElementById('result').innerText= "please enter a valid number"
+            }
+
+            for (let i=2; i <=num; i++){
+                result +=i;
+            }
+
+            document.getElementById('result').innerText= `factorial of ${num} is ${result}`
+        }
+    </script>
+</body>
+</html>
